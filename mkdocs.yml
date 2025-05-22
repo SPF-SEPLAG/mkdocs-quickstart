@@ -1,6 +1,4 @@
 site_name: Documentações SPF
 nav:
   - Home: index.md
-  - About: about.md
-  - Painel DPO: painel-dpo.md
-  - Teste: test.md
+  - Documentações Power Automate: automate.md

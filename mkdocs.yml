@@ -1,4 +1,9 @@
 site_name: Documentações SPF
 nav:
   - Home: index.md
-  - Documentações Power Automate: automate.md
+  - Documentações: documentacoes.md
+  - Projetos: projetos.md
+  - Quem Somos: quem_somos.md
+
+             
+theme: readthedocs

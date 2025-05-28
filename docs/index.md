@@ -12,12 +12,12 @@ Clique em um dos cards abaixo para começar:
 - 📄 **Documentações**  
   Acesse guias e manuais de referência.  
 
-  [> Ir para Documentações](documentacoes.md)
+  [> Ir para Documentações](documentacoes_index.md)
 
 - 📁 **Projetos**  
   Veja detalhes e progresso dos projetos.  
 
-  [> Ir para Projetos](projetos.md)
+  [> Ir para Projetos](projetos_index.md)
 
 - 👥 **Quem Somos**  
   Conheça o time por trás das automações.  

@@ -1,0 +1,1008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Documentação Rotina de Atualização e Tratamento de Dados para o Dashboard BI da DPO - Documentações SPF</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentacao-rotina-de-atualizacao-e-tratamento-de-dados-para-o-dashboard-bi-da-dpo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentações SPF" class="md-header__button md-logo" aria-label="Documentações SPF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentações SPF
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentação Rotina de Atualização e Tratamento de Dados para o Dashboard BI da DPO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentações SPF" class="md-nav__button md-logo" aria-label="Documentações SPF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentações SPF
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentações
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automate_desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power Automate Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projetos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projetos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiMGUwMmRmN2MtY2YwMy00MmMwLTllNDItNTc1ZjA4NDdjNzE5IiwidCI6ImU1ZDNhZTdjLTliMzgtNDhkZS1hMDg3LWY2NzM0YTI4NzU3NCJ9" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Painel Execução Orçamentária - DPO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiNjM1OGU2ODUtNGY1Yy00MjBiLTgwZTItZDM1ZGZjMTlkNjlhIiwidCI6ImU1ZDNhZTdjLTliMzgtNDhkZS1hMDg3LWY2NzM0YTI4NzU3NCJ9&pageName=0250f26b7a42d7cc6766" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Painel Contratos - DCC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiNjgxYmE0OTctMWVkMi00NWNkLTllZjctYmY5ZGIwNTdiMzI0IiwidCI6ImU1ZDNhZTdjLTliMzgtNDhkZS1hMDg3LWY2NzM0YTI4NzU3NCJ9&pageName=a193727a160379368e49" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Painel PAC 2025 - DCCC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cecad365.sharepoint.com/:f:/r/sites/AutomatizacoesSPF/Documentos%20Compartilhados/General/dcf/fluxos/Registrar%20NFS%202.0?csf=1&web=1&e=UhQpDL" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxo Pagamento Notas Fiscais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cecad365.sharepoint.com/:f:/r/sites/AutomatizacoesSPF/Documentos%20Compartilhados/General/dcf/fluxos/Registrar%20Liquida%C3%A7%C3%A3o%202.0?csf=1&web=1&e=YfUYau" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxo Liquidação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cecad365.sharepoint.com/:f:/r/sites/AutomatizacoesSPF/Documentos%20Compartilhados/General/dcf/fluxos/Registrar%20Empenho?csf=1&web=1&e=SZKQKr" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxo Registro de Empenho
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cecad365.sharepoint.com/:f:/r/sites/AutomatizacoesSPF/Documentos%20Compartilhados/General/dcf/fluxos/Emitir%20Guia%20ISSQN?csf=1&web=1&e=Mtf5YC" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxo Emissão Guia ISSQN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://cecad365.sharepoint.com/:f:/r/sites/AutomatizacoesSPF/Documentos%20Compartilhados/General/sede?csf=1&web=1&e=amAVIG" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxo Extração Ordens de Pagamento SEDE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quem_somos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quem Somos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas-necessarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramentas necessárias:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-a-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo a passo:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup inicial:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inicializar-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicializar git:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-ambiente-virtual-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar ambiente virtual python:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalar ambiente virtual python:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar ambiente virtual:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ativar-o-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ativar o ambiente virtual:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-os-requirements-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar os requirements do projeto.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitar-e-fazer-o-push-das-alteracoes-para-o-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commitar e fazer o push das alterações para o github.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-o-secret-e-o-personal-access-token-pat-no-github-para-correta-execucao-dos-actions-do-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar o Secret e o Personal Access Token (PAT) no Github para correta execução dos Actions do Github.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criar o Secret e o Personal Access Token (PAT) no Github para correta execução dos Actions do Github.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-pat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar PAT:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criar-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar Secret:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execucao-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução manual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execução manual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-3-em-3-meses-sera-necessario-executar-os-scripts-manualmente-para-gerar-um-novo-refresh-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      De 3 em 3 meses será necessário executar os scripts manualmente para gerar um novo Refresh Token.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executar-git-pull-do-repo-do-github-para-baixar-os-arquivos-mais-recentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executar git pull do repo do github para baixar os arquivos mais recentes.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ativar-o-ambiente-virtual-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ativar o ambiente virtual python.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executar-o-script-de-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executar o script de download.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executar-os-scripts-de-tratamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executar os scripts de tratamento.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitar-e-fazer-o-push-das-alteracoes-para-o-github_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commitar e fazer o push das alterações para o github.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentacao-rotina-de-atualizacao-e-tratamento-de-dados-para-o-dashboard-bi-da-dpo">Documentação Rotina de Atualização e Tratamento de Dados para o Dashboard BI da DPO</h1>
+<h2 id="introducao">Introdução</h2>
+<p>Esse projeto foi desenvolvido com a intenção de automatizar o tratamento e a atualização dos dados do Dasbhoard de BI (Business Intelligence) da Diretoria de Planejamento e Orçamento (DPO) da Superintendência de Planejamento e Finanças (SPF) da Secretaria de Planejamento e Gestão de Minas Gerais (SEPLAG – MG).</p>
+<p>Para isso é utilizada uma série de scripts desenvolvidos na linguagem de programação Python que realizam a extração dos dados pelo Sharepoint e o seu tratamento em sequência, por meio das bibliotecas msal, Office365-REST-Python-Client e pandas.</p>
+<p>Além disso, para a automação desta rotina, é utilizado o Github Actions, que permite a execução automatizada de scripts de programação, funcionalidade presente no Github, plataforma para controle e versionamento de código, amplamente utilizada por desenvolvedores.</p>
+<h2 id="ferramentas-necessarias">Ferramentas necessárias:</h2>
+<ul>
+<li>Python</li>
+<li>Github</li>
+<li>Vscode (recomendado)</li>
+<li>Gitbash (recomendado)</li>
+</ul>
+<h2 id="passo-a-passo">Passo a passo:</h2>
+<p><strong>Observação: o repositório do github deve ser privado, pois o Script utiliza as credenciais da organização do usuário para gerar os Tokens de autenticação.</strong></p>
+<p><strong>Além disso, o github não aceita push de arquivos com Token em repos públicos.</strong></p>
+<h2 id="setup-inicial">Setup inicial:</h2>
+<ol>
+<li>
+<p>Instalar o python.</p>
+</li>
+<li>
+<p>Criar repositório privado no github.</p>
+</li>
+<li>
+<p>Criar repo local.</p>
+</li>
+</ol>
+<h2 id="inicializar-git">Inicializar git:</h2>
+<ul>
+<li>Criar o README.md;</li>
+<li>Criar .gitignore;</li>
+<li>Realizar primeiro commit;</li>
+<li>Alterar nome da branch para main;</li>
+<li>Criar origin e definir URL a partir do remote;</li>
+<li>Realizar o primeiro push;</li>
+</ul>
+<h2 id="comandos">Comandos:</h2>
+<ul>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit -m "first commit"</li>
+<li>git branch -M main</li>
+<li>git remote add origin git push origin main</li>
+</ul>
+<p><strong>Observação: alterar user e repo-name.</strong></p>
+<ul>
+<li>
+<p>Adicionar scripts .py na raiz do repo local.</p>
+</li>
+<li>
+<p>Adicionar script .yml no repo local para execução do Actions do github.</p>
+</li>
+</ul>
+<p><strong>Criar na raiz do repo: .github/workflows/run-script.yml</strong></p>
+<h2 id="instalar-ambiente-virtual-python">Instalar ambiente virtual python:</h2>
+<h3 id="criar-ambiente-virtual">Criar ambiente virtual:</h3>
+<ul>
+<li>python –m venv venv</li>
+</ul>
+<h3 id="ativar-o-ambiente-virtual">Ativar o ambiente virtual:</h3>
+<ul>
+<li>source venv/Scripts/activate</li>
+</ul>
+<h3 id="instalar-os-requirements-do-projeto">Instalar os requirements do projeto.</h3>
+<ul>
+<li>pip install –r requirements.txt</li>
+</ul>
+<h3 id="commitar-e-fazer-o-push-das-alteracoes-para-o-github">Commitar e fazer o push das alterações para o github.</h3>
+<ul>
+<li>git add .</li>
+<li>git commit -m "mensagem do commit"</li>
+<li>git push origin main</li>
+</ul>
+<p><strong>Observação: alterar a mensagem do commit.</strong></p>
+<h2 id="criar-o-secret-e-o-personal-access-token-pat-no-github-para-correta-execucao-dos-actions-do-github">Criar o Secret e o Personal Access Token (PAT) no Github para correta execução dos Actions do Github.</h2>
+<h3 id="criar-pat">Criar PAT:</h3>
+<ul>
+<li>Conta &gt; Settings &gt; Developer settings &gt; Personal access tokens &gt; Tokens (classic) &gt; Generate new token &gt; Generate new token (classic) &gt; Note: gh-action-push &gt; Select scopes: repo (marcar checkbox) &gt; Generate token &gt; Copiar o hash do token (sugestão: copiar e salvar para um txt, pois você não conseguirá ver ele novamente).</li>
+</ul>
+<h3 id="criar-secret">Criar Secret:</h3>
+<ul>
+<li>Repositório &gt; Settings &gt; Secrets and variables &gt; Actions &gt; New repository secret &gt; Name: PERSONAL_TOKEN, Secret: colar a hash do PAT que você copiou &gt; Add secret</li>
+</ul>
+<h2 id="execucao-manual">Execução manual</h2>
+<h3 id="de-3-em-3-meses-sera-necessario-executar-os-scripts-manualmente-para-gerar-um-novo-refresh-token">De 3 em 3 meses será necessário executar os scripts manualmente para gerar um novo Refresh Token.</h3>
+<h3 id="executar-git-pull-do-repo-do-github-para-baixar-os-arquivos-mais-recentes">Executar git pull do repo do github para baixar os arquivos mais recentes.</h3>
+<ul>
+<li>git pull origin main</li>
+</ul>
+<h3 id="ativar-o-ambiente-virtual-python">Ativar o ambiente virtual python.</h3>
+<ul>
+<li>source venv/Scripts/activate</li>
+</ul>
+<h3 id="executar-o-script-de-download">Executar o script de download.</h3>
+<ul>
+<li>python download.py</li>
+</ul>
+<h3 id="executar-os-scripts-de-tratamento">Executar os scripts de tratamento.</h3>
+<p>python process_data_num.py</p>
+<p>python process_data_txt.py</p>
+<h3 id="commitar-e-fazer-o-push-das-alteracoes-para-o-github_1">Commitar e fazer o push das alterações para o github.</h3>
+<ul>
+<li>git add .</li>
+<li>git commit -m "mensagem do commit"</li>
+<li>git push origin main</li>
+</ul>
+<p><strong>Observação: alterar a mensagem do commit.</strong></p>
+<h1 id="documentacao">Documentação:</h1>
+<h2 id="downloadpy">download.py</h2>
+<p>Chama a função download_sharepoint_file(), que recebe os seguintes parâmetros:</p>
+<ul>
+<li>
+<p>base_url: URL da equipe no Sharepoint.</p>
+</li>
+<li>
+<p>folder_path: o caminho da pasta do arquivo que será baixado.</p>
+</li>
+<li>
+<p>file_name: o nome do arquivo para baixar (nome do arquivo no Sharepoint).</p>
+</li>
+<li>
+<p>local_filename: o novo nome do arquivo que será salvo (nome do arquivo na máquina local).</p>
+</li>
+</ul>
+<p>Além disso, a função download_sharepoint_file() chama por baixo dos panos a função get_sharepoint_token(), presente no script sharepoint_utils.py.</p>
+<p>Pode-se dizer que essa função é a mais importante para o funcionamento do projeto como um todo, pois é através dela que é realizada a autenticação do usuário no Sharepoint e a geração do Refresh Token e do Access Token, conforme será detalhado abaixo.</p>
+<h2 id="sharepoint_utilspy">sharepoint_utils.py</h2>
+<h3 id="get_sharepoint_token">get_sharepoint_token()</h3>
+<p>É a função mais importante do projeto: a partir dela é gerado o arquivo cache que armazenará o Access Token e o Refresh Token que permitirão a autenticação do usuário e realização do download ou upload do arquivo para o Sharepoint que será tratado posteriormente para extração dos dados e informações relevantes.</p>
+<p>Na primeira execução, inicialmente é gerado o cache em que serão armazenadas as informações de acesso do usuário.</p>
+<p>O app é então carregado com, além das credenciais da organização, as informações presentes no cache, se existirem. É isso que permite a autenticação do usuário silenciosamente (sem interação com o navegador) em execuções futuras, conforme será detalhado abaixo.</p>
+<p>Seguindo a lógica anterior, a próxima etapa é checar se a credencial do usuário corresponde a algum dos usuários listados no cache da aplicação. Ou seja, se aquele usuário tentando realizar o download ou upload do arquivo é autenticado e possui algum Token correspondente. Se for, o Token será gerado silenciosamente, conforme detalhado abaixo. Na primeira execução essa variável accounts será vazia.</p>
+<p>Em seguida, ao não conseguir gerar o Token silenciosamente, o navegador é aberto e é pedido ao usuário para logar na sua conta e, portanto, gerar o Token interativamente.</p>
+<p>Essas novas informações presentes no cache que foi gerado previamente são então salvas no arquivo msal_cache.bin (se ele não existia previamente na pasta do projeto ele é criado aqui).</p>
+<p>Dessa forma, a partir da primeira execução e geração do arquivo de cache, com as informações de acesso, incluindo o Token, nas execuções posteriores, o Token poderá ser adquirido silenciosamente, não sendo necessário que o usuário realize qualquer tipo de interação com o navegador: o Token será apenas lido do arquivo com o cache (msal_cache.bin).</p>
+<p>Ao final, a função retorna a variável result. É essa variável que conterá as informações relativas ao Token.</p>
+<p>Por fim, deve-se detalhar a diferença entre Access Token e Refresh Token e como eles estão presentes neste projeto. O Access Token é o que de fato é utilizado para autenticação de usuário. O problema do Access Token é que ele expira após cerca de 1 hora, ou seja, possui um prazo de validade muito curto. Como solução para esse problema, existe o Refresh Token, que é utilizado para gerar um novo Access Token recorrentemente, tendo em vista que possui um prazo de validade mais longo (por volta de 3 meses num geral).</p>
+<p>No contexto desse projeto, quando o usuário executa o script pela primeira vez, ao realizar o login no navegador, são gerados interativamente o Access Token e o Refresh Token, na chamada da função acquire_token_interactive(). Ao final do código, conforme detalhado anteriormente, esses Tokens são salvos no cache e no arquivo correspondente, msal_cache.bin.</p>
+<p>A partir daí, em novas execuções o Token será gerado silenciosamente por meio da função acquire_token_silent(). Essa função lê o Access Token presente no arquivo de cache e passa o valor para a variável; no entanto, caso ele tenha expirado, ela utiliza o Refresh Token e gera um novo Access Token, permitindo novamente a autenticação.</p>
+<p>Na prática, pela possibilidade de geração do Access Token silenciosamente a partir do Refresh Token, pode-se dizer que o uso desse script permite o desenvolvimento de rotinas de automação. No entanto, a cada 3 meses será necessária a execução do script manualmente por parte do usuário, para geração de um novo Refresh Token.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../ajax-nav.js"></script>
+      
+    
+  </body>
+</html>

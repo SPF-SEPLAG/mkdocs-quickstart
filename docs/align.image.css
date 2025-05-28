@@ -1,0 +1,6 @@
+/* Torna todas as imagens inline-middle e dá um espacinho à direita */
+.md-content img {
+  vertical-align: middle;
+  width: 1.25em;         /* ajusta o tamanho – aqui equivale a cerca de 20px */
+  margin-right: 0.3em;   /* espaçamento entre ícone e texto */
+}

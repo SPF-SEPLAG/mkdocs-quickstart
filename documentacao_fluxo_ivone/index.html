@@ -16,7 +16,7 @@
     
     
       
-        <title>Documentações Power Automate - Documentações SPF</title>
+        <title>Fluxo Power Automate – Registro de Pagamento de Notas Fiscas - Documentações SPF</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentacoes-power-automate" class="md-skip">
+        <a href="#fluxo-power-automate-registro-de-pagamento-de-notas-fiscas" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentações Power Automate
+              Fluxo Power Automate – Registro de Pagamento de Notas Fiscas
             
           </span>
         </div>
@@ -499,45 +499,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentacao-fluxo-liquidacao" class="md-nav__link">
+  <a href="#objetivo" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentação Fluxo Liquidação
+      Objetivo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentacao-fluxo-notas-fiscais" class="md-nav__link">
+  <a href="#documentacao" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentação Fluxo Notas Fiscais
+      Documentação
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentacao-fluxo-issqn" class="md-nav__link">
+  <a href="#passos-para-execucao-do-fluxo-no-power-automate-desktop" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentação Fluxo ISSQN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentacao-fluxo-registro-de-codigos-de-barra" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentação Fluxo Registro de Códigos de Barra
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentacao-fluxo-ordens-de-pagamento-sede" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentação Fluxo Ordens de Pagamento - SEDE
+      Passos Para Execução do Fluxo no Power Automate Desktop
     </span>
   </a>
   
@@ -559,12 +541,210 @@
 
 
 
-<h1 id="documentacoes-power-automate">Documentações Power Automate</h1>
-<h4 id="documentacao-fluxo-liquidacao"><a href="../automate_liquidacao/">Documentação Fluxo Liquidação</a></h4>
-<h4 id="documentacao-fluxo-notas-fiscais"><a href="../automate_liquidacao/">Documentação Fluxo Notas Fiscais</a></h4>
-<h4 id="documentacao-fluxo-issqn"><a href="../automate_issqn/">Documentação Fluxo ISSQN</a></h4>
-<h4 id="documentacao-fluxo-registro-de-codigos-de-barra"><a href="documentacao_fluxo_liliane.md">Documentação Fluxo Registro de Códigos de Barra</a></h4>
-<h4 id="documentacao-fluxo-ordens-de-pagamento-sede"><a href="../automate_sede/">Documentação Fluxo Ordens de Pagamento - SEDE</a></h4>
+<h1 id="fluxo-power-automate-registro-de-pagamento-de-notas-fiscas">Fluxo Power Automate – Registro de Pagamento de Notas Fiscas</h1>
+<h2 id="objetivo">Objetivo</h2>
+<p>Este fluxo automatiza o registro de ordens de pagamento no sistema SIAFI e no SEI, percorrendo registros de uma planilha de controle e anexando os relatórios de pagamento no processo SEI correspondente.</p>
+<h2 id="documentacao">Documentação</h2>
+<p>O fluxo é composto por 1 fluxo principal (Main).</p>
+<ol>
+<li><strong>Inicialização e Leitura da Planilha</strong></li>
+<li><strong>Excel.LaunchExcel</strong>  <ul>
+<li>Path: <code>%file_path_fluxo%\\planilha_controle_pagamento.xlsx</code>  </li>
+<li>Visible: False  </li>
+<li>Instance: <code>planilha</code>  </li>
+<li>Descrição: Abre o Microsoft Excel em segundo plano e carrega a planilha de controle de pagamentos para leitura dos dados.</li>
+</ul>
+</li>
+<li><strong>Excel.GetFirstFreeColumnRow</strong>  <ul>
+<li>Instance:<code>planilha</code>  </li>
+<li>FirstFreeColumn: <code>coluna_livre</code>  </li>
+<li>FirstFreeRow: <code>linha_livre</code>  </li>
+<li>Descrição: Identifica a primeira coluna e a primeira linha vazias na planilha, determinando o alcance do intervalo de dados.</li>
+</ul>
+</li>
+<li><strong>Excel.ReadFromExcel.ReadCells</strong>  <ul>
+<li>Instance: <code>planilha</code>  </li>
+<li>StartColumn: <code>A</code>  </li>
+<li>StartRow: <code>1</code>  </li>
+<li>EndColumn: <code>coluna_livre - 1</code>  </li>
+<li>EndRow: <code>linha_livre - 1</code>  </li>
+<li>ReadAsText: False  </li>
+<li>FirstLineIsHeader: True  </li>
+<li>RangeValue: <code>dados_pagamento</code>  </li>
+<li>Descrição: Lê todas as células preenchidas no intervalo especificado, convertendo-as em uma tabela de dados chamada <code>dados_pagamento</code>, com cabeçalhos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Excel.CloseExcel.Close</strong>  </p>
+<ul>
+<li>Instance: <code>planilha</code>  </li>
+<li>Descrição: Fecha a instância do Excel, garantido que o arquivo não fique aberto em segundo plano.</li>
+</ul>
+</li>
+<li>
+<p><strong>Loop de Processamento por Registro</strong>  </p>
+</li>
+<li>LOOP FOREACH <code>linha</code> IN <code>dados_pagamento</code>  </li>
+<li>
+<p>Descrição: Itera sobre cada registro de pagamento lido da planilha para processar individualmente.</p>
+</li>
+<li>
+<p><strong>Acesso ao SIAFI e Geração do Relatório</strong></p>
+<ul>
+<li><strong>WebAutomation.LaunchChrome.LaunchChrome</strong>  <ul>
+<li>Url: <code>https://www.siafi.mg.gov.br/fnad/Relatorios.mtw</code>  </li>
+<li>BrowserInstance: <code>siafi_branco</code>  </li>
+<li>Descrição: Abre o Google Chrome e acessa a página de relatórios do SIAFI para gerar o documento de pagamento.</li>
+</ul>
+</li>
+<li><strong>IF WebAutomation.IfWebPageContains.WebPageContainsText</strong>  <ul>
+<li>BrowserInstance: <code>siafi_branco</code>  </li>
+<li>Text: <code>Login Certificação Digital</code>  </li>
+<li>THEN: Preenche e envia credenciais de certificação digital.  </li>
+<li>Descrição: Verifica se é necessário autenticar via certificado digital e realiza o login automaticamente, se solicitado.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.Click.Click</strong>  <ul>
+<li>*Element: Anchor 'Consulta / Impressão Documento Específico'  </li>
+<li>Descrição: Seleciona a opção de consulta específica de documentos para aplicar filtros avançados.</li>
+</ul>
+</li>
+<li><strong>WAIT</strong> 2 segundos  <ul>
+<li>Descrição: Aguarda o carregamento completo da página antes de continuar.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.ExecuteJavascript</strong>  <ul>
+<li>Script: <code>document.getElementById('cmbUE').value = '%linha['Unidade Executora']%';</code>  </li>
+<li><strong>Descrição:</strong> Define a Unidade Executora no filtro de acordo com o valor da planilha.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong><br />
+    -*Keys: <code>%linha['OP']%{Return}</code>  <ul>
+<li><strong>Descrição:</strong> Insere o número da Ordem de Pagamento e confirma, gerando o relatório.</li>
+</ul>
+</li>
+<li><strong>MouseAndKeyboard.SendKeys.FocusAndSendKeysByTitleClass</strong>  <ul>
+<li>Keys: <code>{Control}S</code>  </li>
+<li><strong>Descrição:</strong> Aciona o atalho para salvar o relatório como PDF na localização definida.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.CloseWebBrowser</strong> e <strong>SendKeys</strong> <code>{Alt}F4</code>  <ul>
+<li><strong>Descrição:</strong> Fecha a janela do navegador, encerrando a sessão no SIAFI.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Registro do Pagamento no SEI</strong></p>
+<ul>
+<li><strong>WebAutomation.LaunchChrome.LaunchChrome</strong>  <ul>
+<li>Url:<code>https://www.sei.mg.gov.br/sip/login.php?sigla_orgao_sistema=GOVMG&amp;sigla_sistema=SEI&amp;infra_url=L3NlaS8=</code>  </li>
+<li>BrowserInstance: <code>sei</code>  </li>
+<li>Descrição: Abre o Chrome e acessa o sistema SEI para registro de documentos.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong>  <ul>
+<li>Keys: <code>%sei_usuario%</code>, <code>%sei_senha%</code>, <code>SEPLAG</code>, <code>{Return}</code>  </li>
+<li><strong>Descrição:</strong> Insere credenciais e seleciona o órgão, efetuando o login no SEI.</li>
+</ul>
+</li>
+<li><strong>WAIT</strong> 2 segundos  <ul>
+<li><strong>Descrição:</strong> Aguarda o login ser processado e o painel principal carregar.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong> <code>{Escape}</code>  <ul>
+<li><strong>Descrição:</strong> Fecha notificações ou pop-ups iniciais.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.Click.Click</strong>  <ul>
+<li>Element: Campo <code>txtPesquisaRapida</code>  </li>
+<li><strong>Descrição:</strong> Posiciona o cursor para pesquisa rápida de processos.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong>  <ul>
+<li>Keys: <code>%linha['Processo SEI']%{Return}</code>  </li>
+<li><strong>Descrição:</strong> Digita o número do processo e inicia a pesquisa.</li>
+</ul>
+</li>
+<li><strong>WAIT UNTIL</strong> "Processo aberto"  <ul>
+<li><strong>Descrição:</strong> Aguarda confirmação de que o processo foi carregado.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.Click.Click</strong>  <ul>
+<li>Element: Image 'Incluir Documento'  </li>
+<li><strong>Descrição:</strong> Abre a interface para anexar um novo documento ao processo.</li>
+</ul>
+</li>
+<li><strong>IF UIAutomation.IfImage.ExistsOnScreen</strong> <code>[imgrepo['mais_verde']]</code> <strong>THEN</strong>  <ul>
+<li>WebAutomation.Click.Click: Image 'Exibir todos os tipos'  </li>
+<li><strong>Descrição:</strong> Se necessário, expande a lista completa de tipos de documento.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong>  <ul>
+<li>Keys: <code>Externo{Tab}{Control}Enter</code>  </li>
+<li><strong>Descrição:</strong> Seleciona a natureza 'Externo' e confirma.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.LaunchChrome.AttachToChromeByTitle</strong>  <ul>
+<li>Title: <code>sei</code>  </li>
+<li><strong>Descrição:</strong> Conecta novamente à janela do SEI para upload.</li>
+</ul>
+</li>
+<li><strong>WebAutomation.ExecuteJavascript</strong>  <ul>
+<li>Script: <code>selSerie = "263";</code> + seleção de opções  </li>
+<li><strong>Descrição:</strong> Configura série e visibilidade do documento.</li>
+</ul>
+</li>
+<li><strong>DateTime.GetCurrentDateTime.Local</strong> → <code>data_atual</code>  <ul>
+<li><strong>Descrição:</strong> Captura data e hora atuais.</li>
+</ul>
+</li>
+<li><strong>Text.ConvertDateTimeToText.FromDateTime</strong> → <code>data_atual</code>  <ul>
+<li><strong>Descrição:</strong> Converte data/hora em texto formatado.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong>  <ul>
+<li>Keys: <code>data_atual{Tab}%linha['OP']%{Tab}pagamento.pdf{Return}</code>  </li>
+<li><strong>Descrição:</strong> Preenche campos de data, número da OP e seleciona o PDF para upload.</li>
+</ul>
+</li>
+<li><strong>File.Delete</strong>  <ul>
+<li>Path: <code>%file_path_fluxo%\\pagamento.pdf</code>  </li>
+<li><strong>Descrição:</strong> Remove o arquivo PDF temporário após upload.</li>
+</ul>
+</li>
+<li><strong>SendKeys</strong> <code>{Alt}F4</code>  <ul>
+<li><strong>Descrição:</strong> Fecha a janela de registro de documento, concluindo o processo.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="passos-para-execucao-do-fluxo-no-power-automate-desktop">Passos Para Execução do Fluxo no Power Automate Desktop</h2>
+<p><strong>Caso já tenha o ambiente preparado (Power Automate instalado, fluxo importado e variáveis definidas), pode-se passar para o passo 5.</strong></p>
+<ol>
+<li><strong>Download e Instalação do Power Automate Desktop</strong>  </li>
+<li><strong>Descrição:</strong> Acesse o site da Microsoft, faça o download e instale o PAD para começar a automação.  </li>
+<li><strong>Login no PAD</strong>  </li>
+<li><strong>Descrição:</strong> Abra o Power Automate Desktop e autentique-se com sua conta corporativa.  </li>
+<li><strong>Importação do Fluxo</strong>  </li>
+<li><strong>Descrição:</strong> Crie um novo fluxo chamado <strong>Registro de Pagamento Ivone</strong> e importe o conteúdo de <code>pgto fluxo ivone.txt</code>.  </li>
+<li><strong>Definição de Variáveis de Entrada</strong>  </li>
+<li><strong>Descrição:</strong> Configure as variáveis necessárias:  <ul>
+<li><code>file_path_fluxo</code>: caminho da pasta com <code>planilha_controle_pagamento.xlsx</code>.  </li>
+<li><code>usuario_siafi</code> e <code>senha_siafi</code>: credenciais do SIAFI.  </li>
+<li><code>sei_usuario</code> e <code>sei_senha</code>: credenciais do SEI.  </li>
+</ul>
+</li>
+<li><strong>Preparação da Planilha de Controle</strong>  </li>
+<li><strong>Descrição:</strong> Certifique-se de que <code>planilha_controle_pagamento.xlsx</code> esteja presente em <code>file_path_fluxo</code> e contenha as colunas <code>Unidade Executora</code>, <code>OP</code> e <code>Processo SEI</code>.  </li>
+<li><strong>Pré-requisitos de Navegador e Internet</strong>  </li>
+<li><strong>Descrição:</strong> Verifique se o Google Chrome está instalado e se há conexão estável com a internet.  </li>
+<li><strong>Execução do Fluxo</strong>  </li>
+<li><strong>Descrição:</strong> No PAD, selecione o fluxo <strong>Registro de Pagamento Ivone</strong> e clique em <strong>Executar</strong>.  </li>
+<li><strong>Acompanhamento e Verificação</strong>  </li>
+<li><strong>Descrição:</strong> Monitore o progresso e confirme que os relatórios foram gerados no SIAFI e registrados no SEI com sucesso.  </li>
+</ol>
 
 
 

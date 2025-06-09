@@ -1,0 +1,886 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Fluxo Power Automate – Integração de Planilha ISSQN e Registro de Códigos de Barras - Documentações SPF</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../align.image.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fluxo-power-automate-integracao-de-planilha-issqn-e-registro-de-codigos-de-barras" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentações SPF" class="md-header__button md-logo" aria-label="Documentações SPF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentações SPF
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fluxo Power Automate – Integração de Planilha ISSQN e Registro de Códigos de Barras
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentações SPF" class="md-nav__button md-logo" aria-label="Documentações SPF" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentações SPF
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentações
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentações
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automate_desktop_documentacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power Automate Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacoes_automate_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power Automate Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbi_documentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacoes_py/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projetos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projetos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxos_automate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power Automate Desktop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxos_automate_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power Automate Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projetos_bi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projetos_py/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quem_somos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quem Somos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subfluxo-planilha-liliane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subfluxo: Planilha Liliane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subfluxo-registrar-codigo-de-barras-liliane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subfluxo: Registrar Código de Barras Liliane
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passos-para-execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passos Para Execução
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fluxo-power-automate-integracao-de-planilha-issqn-e-registro-de-codigos-de-barras">Fluxo Power Automate – Integração de Planilha ISSQN e Registro de Códigos de Barras</h1>
+<h2 id="objetivo">Objetivo</h2>
+<p>Este fluxo automatiza a extração de dados filtrados da planilha <strong>CONTROLE DCF 2024.xlsx</strong> (navegador) para a planilha local <strong>planilha_controle_issqn.xlsx</strong>, e, em seguida, realiza o registro de cada item no SIAFI via aplicação <strong>InputMinot</strong>, incluindo a captura e inserção do código de barras da guia de ISSQN.</p>
+<h2 id="documentacao">Documentação</h2>
+<p>O fluxo principal chama, em sequência, dois subfluxos:</p>
+<ol>
+<li><strong>Planilha Liliane</strong></li>
+<li><strong>Registrar Código de Barras Liliane</strong></li>
+</ol>
+<h3 id="subfluxo-planilha-liliane">Subfluxo: Planilha Liliane</h3>
+<ol>
+<li>Lançar Chrome  </li>
+<li>Ação: <code>WebAutomation.LaunchChrome.LaunchChrome</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>Url</code>: <code>=vUrlPlanilhaDcf</code>  </li>
+<li><code>WindowState</code>: Maximizado  </li>
+<li><code>ClearCache</code>: False  </li>
+<li><code>ClearCookies</code>: False  </li>
+<li><code>BrowserInstance</code> ⇒ <code>vPlanilhaDcf</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Esta etapa inicializa o navegador Chrome e abre a planilha online “CONTROLE DCF 2024.xlsx” usando a URL configurada na variável <code>vUrlPlanilhaDcf</code>. Permite ao fluxo acessar e interagir com a planilha em ambiente web.</p>
+</li>
+<li>
+<p>Anexar à aba da planilha  </p>
+</li>
+<li>Ação: <code>WebAutomation.LaunchChrome.AttachToChromeByTitle</code>  </li>
+<li>Parâmetros: <ul>
+<li><code>TabTitle</code>: <code>CONTROLE DCF 2024.xlsx</code>  </li>
+<li><code>BrowserInstance</code> ⇒ <code>PlanilhaDcfChrome</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Conecta o fluxo à aba já aberta no Chrome cujo título corresponde à planilha de controle, garantindo que as ações seguintes sejam direcionadas ao navegador correto.</p>
+</li>
+<li>
+<p>Solicitar seleção de dados  </p>
+</li>
+<li>Ação: <code>Display.ShowMessageDialog.ShowMessage</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>Title</code>: <code>Atenção!</code>  </li>
+<li><code>Message</code>: Instruções para aplicar filtros e selecionar registros, clicar em <code>A2</code> e confirmar.  </li>
+<li><code>Icon</code>: Warning  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Exibe uma caixa de diálogo com instruções para o usuário aplicar filtros na planilha web e selecionar manualmente os dados de interesse antes de prosseguir.</p>
+</li>
+<li>
+<p>Selecionar e copiar registros  </p>
+</li>
+<li>Ações:  <ul>
+<li><code>MouseAndKeyboard.SendKeys.FocusAndSendKeysByInstanceOrHandle</code> ⇒ Seleção (Shift+Ctrl+Down e Right×20)  </li>
+<li><code>MouseAndKeyboard.SendKeys.FocusAndSendKeysByInstanceOrHandle</code> ⇒ <code>Ctrl+C</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Seleciona a coluna de dados filtrados na planilha web a partir da célula A2, abrange as colunas necessárias e copia o conteúdo para a área de transferência.</p>
+</li>
+<li>
+<p>Abrir planilha local  </p>
+</li>
+<li>Ação: <code>Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>Path</code>: <code>%InputFolderPath%\planilha_controle_issqn.xlsx</code>  </li>
+<li><code>Visible</code>: True  </li>
+<li><code>Instance</code> ⇒ <code>PlanilhaExcel</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Abre no Excel a planilha local <code>planilha_controle_issqn.xlsx</code> a partir da pasta definida em <code>InputFolderPath</code>, deixando-a visível para receber os dados copiados.</p>
+</li>
+<li>
+<p>Posicionar e ativar célula  </p>
+</li>
+<li>Ações:  <ul>
+<li><code>MouseAndKeyboard.SendKeys</code> ⇒ <code>{Down}</code>  </li>
+<li><code>Excel.ActivateCellInExcel</code> ⇒ Coluna <code>A</code>, Linha <code>2</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Move o cursor para a primeira célula livre (A2) na planilha local, preparando o local de colagem dos dados.</p>
+</li>
+<li>
+<p>Formatar Texto para Colunas e colar dados  </p>
+</li>
+<li>Ações:  <ul>
+<li><code>MouseAndKeyboard.SendKeys</code> ⇒ Atalho do assistente de Texto para Colunas (<code>Ctrl+T</code>, <code>Alt+C</code>, <code>K</code>, <code>L</code>)  </li>
+<li>Ajuste de direção com <code>{Left}</code>  </li>
+<li><code>MouseAndKeyboard.SendKeys</code> ⇒ <code>Ctrl+V</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Executa o assistente de “Texto para Colunas” para separar corretamente os campos copiados, ajusta o delimitador e cola os dados formatados na planilha.</p>
+</li>
+<li>
+<p>Salvar e fechar planilha  </p>
+</li>
+<li>Ação: <code>Excel.CloseExcel.CloseAndSave</code>  </li>
+<li>O que faz: Salva as alterações na planilha local e fecha a instância do Excel, garantindo que os dados estejam gravados no arquivo.</li>
+</ol>
+<hr />
+<h3 id="subfluxo-registrar-codigo-de-barras-liliane">Subfluxo: Registrar Código de Barras Liliane</h3>
+<ol>
+<li><strong>Abrir planilha local</strong>  </li>
+<li>Ação: <code>Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>Path</code>: <code>%InputFolderPath%\planilha_controle_issqn.xlsx</code>  </li>
+<li><code>Visible</code>: False  </li>
+<li>Instance ⇒ <code>Planilha</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Abre a planilha de controle em modo invisível para leitura dos dados já formatados.</p>
+</li>
+<li>
+<p><strong>Obter primeira célula livre</strong>  </p>
+</li>
+<li>Ação: <code>Excel.GetFirstFreeColumnRow</code>  </li>
+<li>Saídas:  <ul>
+<li><code>FirstFreeColumn</code> ⇒ <code>ColLivre</code>  </li>
+<li><code>FirstFreeRow</code> ⇒ <code>LiLivre</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Identifica a primeira coluna e linha vazias na planilha, delimitando o intervalo de dados existente para leitura.</p>
+</li>
+<li>
+<p><strong>Ler dados para tabela</strong>  </p>
+</li>
+<li>Ação: <code>Excel.ReadFromExcel.ReadCells</code>  </li>
+<li>Intervalo: <code>A1</code> até <code>ColLivre-1</code> / <code>LiLivre-1</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>FirstLineIsHeader</code>: True  </li>
+<li>Saída ⇒ <code>DadosIssqn</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Lê todos os registros existentes na planilha local e armazena-os em uma variável de tabela (<code>DadosIssqn</code>) para processamento.</p>
+</li>
+<li>
+<p><strong>Fechar planilha local</strong></p>
+</li>
+<li>Ação: <code>Excel.CloseExcel.Close</code>  </li>
+<li>
+<p>O que faz: Fecha o Excel sem salvar, pois não houve alteração no arquivo nesta etapa.</p>
+</li>
+<li>
+<p><strong>Inicializar contagem de linha</strong> </p>
+</li>
+<li>Ação: <code>SET SheetLineCount TO 2</code>  </li>
+<li>
+<p>O que faz: Define o contador inicial de linha (<code>SheetLineCount</code>) como 2, indicando que o processamento começará a partir da segunda linha da tabela de dados.</p>
+</li>
+<li>
+<p><strong>Conectar à planilha web</strong>  </p>
+</li>
+<li>Ação: <code>WebAutomation.LaunchChrome.AttachToChromeByTitle</code>  </li>
+<li>Parâmetros:  <ul>
+<li><code>TabTitle</code>: <code>CONTROLE DCF 2024.xlsx</code>  </li>
+<li><code>BrowserInstance</code> ⇒ <code>PlanilhaDcfChrome</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Reconecta o fluxo à aba da planilha web aberta anteriormente, pronta para informar o código de barras.</p>
+</li>
+<li>
+<p><strong>Solicitar seleção da célula de OP</strong>  </p>
+</li>
+<li>Ação: <code>Display.ShowMessageDialog.ShowMessage</code>  </li>
+<li>Parâmetros: instruções para aplicar filtros e selecionar a primeira célula vazia da coluna de OP.  </li>
+<li>
+<p>O que faz: Exibe instruções ao usuário para filtrar e selecionar manualmente a célula onde será registrada a OP no ambiente web.</p>
+</li>
+<li>
+<p><strong>Carregar tabelas de contas</strong>  </p>
+</li>
+<li>Ações:  <ul>
+<li><code>Variables.GenerateDataTableFromCSV</code> ⇒ <code>Contas1501</code>  </li>
+<li><code>Variables.GenerateDataTableFromCSV</code> ⇒ <code>ContasOutrasUos</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Importa tabelas auxiliares de contas orçamentárias a partir de arquivos CSV, usadas nas etapas de cálculo e conferência de conta.</p>
+</li>
+<li>
+<p><strong>Inicializar variáveis de exceção</strong>  </p>
+</li>
+<li>Ações: <code>SET NumberException, LengthException, FloatException, RangeException, SameDayException, WeekendException</code> para <code>''</code>  </li>
+<li>
+<p>O que faz: Reinicia variáveis de controle de erro, assegurando que eventuais exceções sejam tratadas corretamente durante o loop.</p>
+</li>
+<li>
+<p><strong>Loop de processamento para cada registro</strong>  </p>
+<ul>
+<li>Descrição: Itera sobre cada linha de <code>DadosIssqn</code>, extraindo informações necessárias e informando-as no sistema SIAFI via InputMinot.  </li>
+<li><strong>Passos principais dentro do loop:</strong>  </li>
+<li>ID: <code>SET ID TO LiDadosIssqn['ID']</code>  </li>
+<li>Processo SEI: <code>Scripting.RunPythonScript</code> (substituir <code>/</code> por <code>.</code>) ⇒ <code>ProcessoSEI</code>  </li>
+<li>Número da NF: <code>SET NumeroNF TO LiDadosIssqn['Número da Nota Fiscal']</code>  </li>
+<li>CNPJ: <code>Scripting.RunPythonScript</code> (remover pontuação) ⇒ <code>CnpjPref</code>  </li>
+<li>Prefixo Município: <code>Scripting.RunPythonScript</code> (tratar acentuação e nome) ⇒ <code>Pref</code>  </li>
+<li>Dados Orçamentários:  <ul>
+<li><code>GmiFp</code> e <code>Fp</code> via script Python  </li>
+<li><code>ValorIssqn</code> via script Python de conversão  </li>
+<li><code>Guia</code>  </li>
+</ul>
+</li>
+<li><strong>Subfluxos auxiliares:</strong>  <ul>
+<li><code>CALL 'Extrair Uo'</code>  </li>
+<li><code>CALL 'Informar Código de Barras'</code>  </li>
+<li><code>CALL 'Conferir Conta'</code>  </li>
+<li><code>CALL 'Informar Multa'</code>  </li>
+<li><code>CALL 'Informar Linha'</code>  </li>
+<li><code>CALL 'Informar Data Pagamento'</code>  </li>
+<li><code>CALL 'Informar Op'</code>  </li>
+</ul>
+</li>
+<li><strong>Interações com SIAFI (InputMinot):</strong>  <ul>
+<li><code>MouseAndKeyboard.SendKeys</code> para preencher campos em sequência  </li>
+<li><code>Display.ShowMessageDialog</code> para conferência de texto  </li>
+<li><code>MouseAndKeyboard.SendKeys {F5}</code> (simulação) e desativação da execução real  </li>
+</ul>
+</li>
+<li>O que faz: Em cada iteração, o fluxo coleta dados da planilha local, processa informações orçamentárias via scripts Python, e preenche automaticamente os campos no sistema SIAFI, incluindo a inserção do código de barras e demais detalhes.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="passos-para-execucao">Passos Para Execução</h2>
+<ol>
+<li><strong>Pré-requisitos</strong>  </li>
+<li>Instalar Power Automate Desktop e efetuar login corporativo  </li>
+<li>Definir as variáveis de ambiente:  <ul>
+<li><code>vUrlPlanilhaDcf</code>: URL da planilha web  </li>
+<li><code>InputFolderPath</code>: caminho da pasta local onde está <code>planilha_controle_issqn.xlsx</code>  </li>
+</ul>
+</li>
+<li>
+<p>O que faz: Garante que todos os componentes necessários estejam configurados antes de iniciar o fluxo.</p>
+</li>
+<li>
+<p><strong>Ambiente</strong>  </p>
+</li>
+<li>Ter a planilha <code>CONTROLE DCF 2024.xlsx</code> aberta no Chrome  </li>
+<li>Garantir que <code>planilha_controle_issqn.xlsx</code> esteja em <code>%InputFolderPath%</code>  </li>
+<li>Disponibilizar os arquivos CSV para contas: <code>InputContas1501Csv</code>, <code>InputContasOutrasUosCsv</code>  </li>
+<li>
+<p>O que faz: Prepara o ambiente de execução com os arquivos e instâncias corretas.</p>
+</li>
+<li>
+<p><strong>Execução</strong>  </p>
+</li>
+<li>Executar o subfluxo <strong>Planilha Liliane</strong>  </li>
+<li>Executar o subfluxo <strong>Registrar Código de Barras Liliane</strong>  </li>
+<li>Seguir as instruções das caixas de diálogo para seleção de células, inserção de códigos de barras e conferências  </li>
+<li>O que faz:Executa de forma sequencial os dois subfluxos, automatizando completamente o processo de extração, formatação e registro dos dados no sistema.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../ajax-nav.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
